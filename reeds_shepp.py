@@ -83,6 +83,7 @@ def reflect(word):
 
 
 def get_all_words(p1, p2):
+    # 12 x 4 = 48 kinds of word patterns
     formulas = [word_cluster_1, word_cluster_2, word_cluster_3, 
                 word_cluster_4, word_cluster_5, word_cluster_6, 
                 word_cluster_7, word_cluster_8, word_cluster_9, 
@@ -392,7 +393,7 @@ def word_cluster_11(x, y, phi):
         v = utils.M(phi - t - math.pi/2)
 
         params = [t, u, math.pi/2, v]
-        steerings = [Steering.RIGHT, Steering.STRAIGHT, Steering.RIGHT, Steering.LEFT]
+        steerings = [Steering.LEFT, Steering.STRAIGHT, Steering.LEFT, Steering.RIGHT]
         gears = [Gear.FORWARD, Gear.FORWARD, Gear.FORWARD, Gear.BACKWORD]
 
         for i in range(len(params)):
