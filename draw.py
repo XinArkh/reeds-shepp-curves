@@ -16,15 +16,6 @@ def scale(x):
         return [p * SCALE for p in x]
     return x * SCALE
 
-
-def unscale(x):
-    """
-    Unscale the input coordinate(s).
-    """
-    if type(x) is tuple or type(x) is list:
-        return [p / SCALE for p in x]
-    return x / SCALE
-
 # note: tesla is a turtle instance
 
 def draw_vec(tesla):
@@ -60,7 +51,7 @@ def goto(tesla, pos, scale_pos=True):
 
 def draw_path(tesla, path):
     """
-    Draw the path (list of rs.PathElements).
+    Draw the path (motions in a word).
     """
     for e in path:
         gear = 1 if e.gear == rs.Gear.FORWARD else -1
