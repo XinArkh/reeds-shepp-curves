@@ -1,11 +1,12 @@
 import turtle
-from utils import *
-import reeds_shepp as rs
 import random as rd
+import utils
+import reeds_shepp as rs
 
 
 # drawing n units (eg turtle.forward(n)) will draw n * SCALE pixels
 SCALE = 40
+
 
 def scale(x):
     """
@@ -15,6 +16,7 @@ def scale(x):
         return [p * SCALE for p in x]
     return x * SCALE
 
+
 def unscale(x):
     """
     Unscale the input coordinate(s).
@@ -23,55 +25,58 @@ def unscale(x):
         return [p / SCALE for p in x]
     return x / SCALE
 
-# note: bob is a turtle
+# note: tesla is a turtle instance
 
-def draw_vec(bob):
+def draw_vec(tesla):
     """
     Draw an arrow.
     """
-    bob.down()
-    bob.pensize(3)
-    bob.forward(scale(1.2))
-    bob.right(25)
-    bob.backward(scale(.4))
-    bob.forward(scale(.4))
-    bob.left(50)
-    bob.backward(scale(.4))
-    bob.forward(scale(.4))
-    bob.right(25)
-    bob.pensize(1)
-    bob.up()
+    tesla.down()
+    tesla.pensize(3)
+    tesla.forward(scale(1.2))
+    tesla.right(25)
+    tesla.backward(scale(.4))
+    tesla.forward(scale(.4))
+    tesla.left(50)
+    tesla.backward(scale(.4))
+    tesla.forward(scale(.4))
+    tesla.right(25)
+    tesla.pensize(1)
+    tesla.up()
 
-def goto(bob, pos, scale_pos=True):
+
+def goto(tesla, pos, scale_pos=True):
     """
     Go to a position without drawing.
     """
-    bob.up()
+    tesla.up()
     if scale_pos:
-        bob.setpos(scale(pos[:2]))
+        tesla.setpos(scale(pos[:2]))
     else:
-        bob.setpos(pos[:2])
-    bob.setheading(rad2deg(pos[2]))
-    bob.down()
+        tesla.setpos(pos[:2])
+    tesla.setheading(utils.rad2deg(pos[2]))
+    tesla.down()
 
-def draw_path(bob, path):
+
+def draw_path(tesla, path):
     """
     Draw the path (list of rs.PathElements).
     """
     for e in path:
         gear = 1 if e.gear == rs.Gear.FORWARD else -1
         if e.steering == rs.Steering.LEFT:
-            bob.circle(scale(1), gear * rad2deg(e.param))
+            tesla.circle(scale(1), gear * utils.rad2deg(e.param))
         elif e.steering == rs.Steering.RIGHT:
-            bob.circle(- scale(1), gear * rad2deg(e.param))
+            tesla.circle(- scale(1), gear * utils.rad2deg(e.param))
         elif e.steering == rs.Steering.STRAIGHT:
-            bob.forward(gear * scale(e.param))
+            tesla.forward(gear * scale(e.param))
 
-def set_random_pencolor(bob):
+
+def set_random_pencolor(tesla):
     """
     Draws noodles.
     """
     r, g, b = 1, 1, 1
     while r + g + b > 2.5:
         r, g, b = rd.uniform(0, 1), rd.uniform(0, 1), rd.uniform(0, 1)
-    bob.pencolor(r, g, b)
+    tesla.pencolor(r, g, b)
