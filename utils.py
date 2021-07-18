@@ -22,11 +22,12 @@ def M(theta):
 
 def normalize_basis(p1, p2):
     """
-    Normalize the basis that p1 equals (0, 0, 0)
+    Normalize the basis so that p1 equals (0, 0, 0)
     """
     dx = p2[0] - p1[0]
     dy = p2[1] - p1[1]
     phi1 = p1[2]
+    # Rotation matrix with -phi
     x_new = math.cos(phi1) * dx + math.sin(phi1) * dy
     y_new = -math.sin(phi1) * dx + math.cos(phi1) * dy
     phi_new = p2[2] - p1[2]
