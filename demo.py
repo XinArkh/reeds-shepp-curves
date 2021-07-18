@@ -16,9 +16,9 @@ def gen_path_nodes():
     path_nodes = []
     for i in range(len(pts) - 1):
         # 1. let the vectors point at their successor
-        dx = pts[i+1][0] - pts[i][0]
-        dy = pts[i+1][1] - pts[i][1]
-        phi = math.atan2(dy, dx)
+        # dx = pts[i+1][0] - pts[i][0]
+        # dy = pts[i+1][1] - pts[i][1]
+        # phi = math.atan2(dy, dx)
         
         # 2. or generate random directions
         phi = rd.random() * math.pi * 2
