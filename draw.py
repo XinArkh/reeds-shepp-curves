@@ -25,7 +25,7 @@ def unscale(x):
 
 # note: bob is a turtle
 
-def vec(bob):
+def draw_vec(bob):
     """
     Draw an arrow.
     """
