@@ -18,7 +18,7 @@ class Gear(Enum):
     Gear shift, go forward or backward
     """
     FORWARD = 1
-    BACKWORD = -1
+    BACKWARD = -1
 
 
 class Letter():
@@ -44,7 +44,7 @@ class Letter():
             gear_str = 'backward'
 
         info_str = '{ Steering: ' + steering_str + '\tGear: ' + gear_str \
-                   + '\tLength: ' + str(round(self.param, 2)) + '}'
+                   + '\tLength: ' + str(round(self.param, 2)) + ' }'
 
         return info_str
 
@@ -57,7 +57,7 @@ class Letter():
 
     def reverse_gear(self):
         self.gear = Gear(-self.gear.value)
-        # self.gear = Gear.BACKWORD if self.gear == Gear.FORWARD else Gear.FORWARD
+        # self.gear = Gear.BACKWARD if self.gear == Gear.FORWARD else Gear.FORWARD
 
 
 def word_length(word):
@@ -183,7 +183,7 @@ def word_cluster_3(x, y, phi):
 
         params = [t, u, v]
         steerings = [Steering.LEFT, Steering.RIGHT, Steering.LEFT]
-        gears = [Gear.FORWARD, Gear.BACKWORD, Gear.FORWARD]
+        gears = [Gear.FORWARD, Gear.BACKWARD, Gear.FORWARD]
 
         for i in range(len(params)):
             word.append(Letter(params[i], steerings[i], gears[i]))
@@ -209,7 +209,7 @@ def word_cluster_4(x, y, phi):
 
         params = [t, u, v]
         steerings = [Steering.LEFT, Steering.RIGHT, Steering.LEFT]
-        gears = [Gear.FORWARD, Gear.BACKWORD, Gear.BACKWORD]
+        gears = [Gear.FORWARD, Gear.BACKWARD, Gear.BACKWARD]
 
         for i in range(len(params)):
             word.append(Letter(params[i], steerings[i], gears[i]))
@@ -235,7 +235,7 @@ def word_cluster_5(x, y, phi):
 
         params = [t, u, v]
         steerings = [Steering.LEFT, Steering.RIGHT, Steering.LEFT]
-        gears = [Gear.FORWARD, Gear.FORWARD, Gear.BACKWORD]
+        gears = [Gear.FORWARD, Gear.FORWARD, Gear.BACKWARD]
 
         for i in range(len(params)):
             word.append(Letter(params[i], steerings[i], gears[i]))
@@ -267,7 +267,7 @@ def word_cluster_6(x, y, phi):
 
         params = [t, u, u, v]
         steerings = [Steering.LEFT, Steering.RIGHT, Steering.LEFT, Steering.RIGHT]
-        gears = [Gear.FORWARD, Gear.FORWARD, Gear.BACKWORD, Gear.BACKWORD]
+        gears = [Gear.FORWARD, Gear.FORWARD, Gear.BACKWARD, Gear.BACKWARD]
 
         for i in range(len(params)):
             word.append(Letter(params[i], steerings[i], gears[i]))
@@ -294,7 +294,7 @@ def word_cluster_7(x, y, phi):
 
         params = [t, u, u, v]
         steerings = [Steering.LEFT, Steering.RIGHT, Steering.LEFT, Steering.RIGHT]
-        gears = [Gear.FORWARD, Gear.BACKWORD, Gear.BACKWORD, Gear.FORWARD]
+        gears = [Gear.FORWARD, Gear.BACKWARD, Gear.BACKWARD, Gear.FORWARD]
 
         for i in range(len(params)):
             word.append(Letter(params[i], steerings[i], gears[i]))
@@ -320,7 +320,7 @@ def word_cluster_8(x, y, phi):
 
         params = [t, math.pi/2, u, v]
         steerings = [Steering.LEFT, Steering.RIGHT, Steering.STRAIGHT, Steering.LEFT]
-        gears = [Gear.FORWARD, Gear.BACKWORD, Gear.BACKWORD, Gear.BACKWORD]
+        gears = [Gear.FORWARD, Gear.BACKWARD, Gear.BACKWARD, Gear.BACKWARD]
 
         for i in range(len(params)):
             word.append(Letter(params[i], steerings[i], gears[i]))
@@ -346,7 +346,7 @@ def word_cluster_9(x, y, phi):
 
         params = [t, u, math.pi/2, v]
         steerings = [Steering.LEFT, Steering.STRAIGHT, Steering.RIGHT, Steering.LEFT]
-        gears = [Gear.FORWARD, Gear.FORWARD, Gear.FORWARD, Gear.BACKWORD]
+        gears = [Gear.FORWARD, Gear.FORWARD, Gear.FORWARD, Gear.BACKWARD]
 
         for i in range(len(params)):
             word.append(Letter(params[i], steerings[i], gears[i]))
@@ -371,7 +371,7 @@ def word_cluster_10(x, y, phi):
 
         params = [t, math.pi/2, u, v]
         steerings = [Steering.LEFT, Steering.RIGHT, Steering.STRAIGHT, Steering.RIGHT]
-        gears = [Gear.FORWARD, Gear.BACKWORD, Gear.BACKWORD, Gear.BACKWORD]
+        gears = [Gear.FORWARD, Gear.BACKWARD, Gear.BACKWARD, Gear.BACKWARD]
 
         for i in range(len(params)):
             word.append(Letter(params[i], steerings[i], gears[i]))
@@ -396,7 +396,7 @@ def word_cluster_11(x, y, phi):
 
         params = [t, u, math.pi/2, v]
         steerings = [Steering.LEFT, Steering.STRAIGHT, Steering.LEFT, Steering.RIGHT]
-        gears = [Gear.FORWARD, Gear.FORWARD, Gear.FORWARD, Gear.BACKWORD]
+        gears = [Gear.FORWARD, Gear.FORWARD, Gear.FORWARD, Gear.BACKWARD]
 
         for i in range(len(params)):
             word.append(Letter(params[i], steerings[i], gears[i]))
@@ -422,7 +422,7 @@ def word_cluster_12(x, y, phi):
 
         params = [t, math.pi/2, u, math.pi/2, v]
         steerings = [Steering.LEFT, Steering.RIGHT, Steering.STRAIGHT, Steering.LEFT, Steering.RIGHT]
-        gears = [Gear.FORWARD, Gear.BACKWORD, Gear.BACKWORD, Gear.BACKWORD, Gear.FORWARD]
+        gears = [Gear.FORWARD, Gear.BACKWARD, Gear.BACKWARD, Gear.BACKWARD, Gear.FORWARD]
 
         for i in range(len(params)):
             word.append(Letter(params[i], steerings[i], gears[i]))
