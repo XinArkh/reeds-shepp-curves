@@ -52,5 +52,8 @@ Optimal path:
 
 [nathanlct/reeds-shepp-curves](https://github.com/nathanlct/reeds-shepp-curves)
 
+[benjaminbecker/reeds-shepp-curves](https://github.com/benjaminbecker/reeds-shepp-curves)
+
 [OMPL/ReedsSheppStateSpace.cpp](https://ompl.kavrakilab.org/ReedsSheppStateSpace_8cpp_source.html)
 
+For further reading, a discussion in [this issue](https://github.com/nathanlct/reeds-shepp-curves/issues/2) also helps.
