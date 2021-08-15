@@ -87,7 +87,7 @@ def main():
     print( "Optimal path length: {} px.".format(round(path_length)) )
     print('Optimal path:')
     for i, path in enumerate(optimal_path):
-        print('{}:\t{}'.format(i, path))
+        print('{}:\t{}'.format(i+1, path))
     turtle.done()
 
 

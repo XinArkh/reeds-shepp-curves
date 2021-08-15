@@ -49,13 +49,15 @@ class Letter():
         return info_str
 
     def reverse_steering(self):
-        if self.steering == Steering.LEFT:
-            self.steering = Steering.RIGHT
-        elif self.steering == Steering.RIGHT:
-            self.steering = Steering.LEFT
+        self.steering = Steering(-self.steering.value)
+        # if self.steering == Steering.LEFT:
+        #     self.steering = Steering.RIGHT
+        # elif self.steering == Steering.RIGHT:
+        #     self.steering = Steering.LEFT
 
     def reverse_gear(self):
-        self.gear = Gear.BACKWORD if self.gear == Gear.FORWARD else Gear.FORWARD
+        self.gear = Gear(-self.gear.value)
+        # self.gear = Gear.BACKWORD if self.gear == Gear.FORWARD else Gear.FORWARD
 
 
 def word_length(word):
